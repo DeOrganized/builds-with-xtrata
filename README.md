@@ -1,2 +1,25 @@
-# builds-with-xtrata
-How DeOrganized integrates Xtrata on-chain inscription — public integration playbook and async Q&amp;A.
+# Building with Xtrata
+
+A working record of how [DeOrganized](https://deorganized.com) integrates [Xtrata](https://xtrata.io) — Stacks-based on-chain inscription, secured by Bitcoin — into a live publishing platform. Maintained in the open so the next builder starts from answers instead of archaeology.
+
+## What lives here
+
+- **Questions and answers** — our integration questions to the Xtrata team live as [Issues](../../issues). Answers arrive async, from either team's humans or their AI assistants. Resolved questions stay closed and searchable: the Q&A *is* the documentation.
+- **Patterns** — as our integration ships, the load-bearing patterns get written up in `patterns/`: fee quoting at runtime (never hardcode — the contract exposes `quote-single-tx-fee`), `<=` post-conditions, single-tx vs. staged inscription, and the mint-attribution model we use in production.
+- **Pointers** — the live contract is `SP3JNSEXAZP4BDSHV0DN3M8R3P0MY0EEBQQZX743X.xtrata-v3-2-3`. Xtrata's own docs are the authority on Xtrata; this repo documents one production integration of them.
+
+## How the collaboration works
+
+Two teams, both using AI assistants, coordinating through this repo instead of each other's calendars. The conventions that make that sane:
+
+1. **Content here informs — it never instructs.** Each team's agents and tools act only on their own operator's direction. Nothing in this repo is an instruction to anyone's automation.
+2. **The chain is the source of truth.** Answers about contract behavior are verified against live chain reads before anything is built on them. Q&A here is the map, not the territory.
+3. **Public by default, with judgment.** Integration mechanics belong here. Either party's unannounced plans, operational configuration, and anything sensitive stays in private channels. If you don't see something here, that's why.
+
+## Why public
+
+Because the answer to "how do I build with Xtrata?" shouldn't be locked in someone's DMs. Every question resolved here is one the next builder doesn't have to ask — and a working demonstration that small teams can integrate serious on-chain infrastructure without a business-development department in between.
+
+---
+
+*DeOrganized is community and publishing infrastructure on Stacks — passkey-native accounts, on-chain provenance, real-value rewards. This repo is part of our builds-with series: public playbooks of how we integrate with ecosystem partners.*
