@@ -8,6 +8,14 @@ A working record of how [DeOrganized](https://deorganized.com) integrates [Xtrat
 - **Patterns** — as our integration ships, the load-bearing patterns get written up in `patterns/`: fee quoting at runtime (never hardcode — the contract exposes `quote-single-tx-fee`), `<=` post-conditions, single-tx vs. staged inscription, and the mint-attribution model we use in production.
 - **Pointers** — the live contract is `SP3JNSEXAZP4BDSHV0DN3M8R3P0MY0EEBQQZX743X.xtrata-v3-2-3`. Xtrata's own docs are the authority on Xtrata; this repo documents one production integration of them.
 
+## Passkey compatibility test page
+
+Xtrata has published an [experimental passkey canary with setup instructions and pinned test evidence](https://github.com/stxtrata/xtrata/tree/b755e0460bfaf81e19a3a081ff7719d9be184cb8/tools/passkey-canary), proposed for its main branch in [Xtrata PR #279](https://github.com/stxtrata/xtrata/pull/279). The linked snapshot is available before that PR is merged; the implementation is maintained in Xtrata's repository.
+
+The prebuilt page runs locally with Node.js and includes frozen software checks, disposable passkey create/sign-in, address continuity comparison and offline Testnet signing. **Use disposable test credentials only; never fund these accounts.** It has no transaction broadcaster and does not change the production wallet or contract.
+
+Software checks have passed; real device/provider trials and a shared HTTPS origin/relying-party ID policy remain pending. The source link is not a hosted phone-testing endpoint. Coordination continues in [issue #11](https://github.com/DeOrganized/builds-with-xtrata/issues/11) and [stacks-passkey-wallet issue #12](https://github.com/DeOrganized/stacks-passkey-wallet/issues/12).
+
 ## How the collaboration works
 
 Two teams, both using AI assistants, coordinating through this repo instead of each other's calendars. The conventions that make that sane:
